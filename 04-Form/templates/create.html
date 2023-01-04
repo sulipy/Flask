@@ -1,0 +1,25 @@
+{% extends 'index.html' %}
+
+
+{% block content  %}
+
+    <h2 class="my-5">Új kurzus regisztrációja</h2>
+    <form action="/course/new" method="POST">
+        <div class="mb-3">
+            <input type="text" class="form-control" id="cim" placeholder="Kurzus címe" name="title" required>
+        </div>
+
+        <div class="mb-3">
+            <input type="text" class="form-control" id="tanar" placeholder="Tanár neve" name="teacher" required>
+        </div>
+
+        <label>A kurzus indul:</label>
+        <div class="mb-3">
+            <input type="date" class="form-control" id="indul" placeholder="Kurzus indul" name="date" required>
+        </div>
+
+        <button type="submit" class="btn btn-dark">Mentés</button>
+
+    </form>
+
+{% endblock content  %}
