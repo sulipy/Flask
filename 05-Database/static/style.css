@@ -1,0 +1,24 @@
+body {
+    background-color: #97b1c0;
+}
+
+.card {
+    background-color: #1a4158;
+    color: #2ef338;
+}
+
+.card-subtitle {
+    color: #97b1c0;
+}
+
+.card-body p {
+    text-align: right;
+}
+
+form {
+    width: 600px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
