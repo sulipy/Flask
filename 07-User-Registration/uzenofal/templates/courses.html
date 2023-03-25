@@ -1,0 +1,16 @@
+{% extends 'index.html' %}
+
+
+{% block content  %}
+
+    {% for course in courses %}
+        <div class="card mt-3" style="width: 18rem">
+          <div class="card-body">
+            <h5 class="card-title">{{ course.title }}</h5>
+            <h6 class="card-subtitle mb-2">{{ course.teacher.username }}</h6>
+            <p class="card-text">{{ course.date.strftime('%Y-%m-%d') }}</p>
+          </div>
+        </div>
+    {% endfor %}
+
+{% endblock content  %}
