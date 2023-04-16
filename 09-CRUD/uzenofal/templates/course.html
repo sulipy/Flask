@@ -1,0 +1,36 @@
+{% extends "index.html" %}
+
+{% block content %}
+    <div class="card mt-3" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">{{ course.title }}</h5>
+        <h6 class="card-subtitle mb-2">{{ course.teacher.username }}</h6>
+        <p class="card-text">{{ course.date.strftime('%Y-%m-%d') }}</p>
+        {% if course.teacher == current_user %}
+          <div>
+            <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{{ url_for('update_course', course_id=course.id) }}">Frissítés</a>
+            <button type="button" class="btn btn-danger btn-sm m-1" data-bs-toggle="modal" data-bs-target="#deleteModal">Törlés</button>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+
+ <!-- Modal -->
+    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="deleteModalLabel">Törlöd a kurzust?</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-footer" style="flex-wrap: nowrap">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Mégsem</button>
+            <form style="display: inline" action="{{ url_for('delete_course', course_id=course.id) }}" method="POST">
+              <input class="btn btn-danger" type="submit" value="Törlés">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+{% endblock content %}

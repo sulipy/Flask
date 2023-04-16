@@ -1,0 +1,34 @@
+body {
+    background-color: #97b1c0;
+}
+
+.card {
+    background-color: #1a4158;
+    color: #2ef338;
+}
+
+.card-subtitle {
+    color: #97b1c0;
+}
+
+.card-body p {
+    text-align: right;
+}
+
+.card-link {
+    text-decoration: none
+}
+
+.card-link>.card:hover {
+    background-color: #061d2b;
+}
+
+
+form {
+    width: 600px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
